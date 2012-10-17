@@ -100,7 +100,7 @@ class CalibreCrawler(threading.Thread):
 		
 		try:
 			response = urllib2.urlopen(url + "browse/category/allbooks")
-		except URLError:
+		except urllib2.URLError:
 			print "Skipping %s, as the server could not be successfully reached." % url
 			return None
 		
