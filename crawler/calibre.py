@@ -97,8 +97,13 @@ class CalibreCrawler(threading.Thread):
 		base = url_matcher.match(url).group(1)
 
 		print "[calibr] Starting crawl on %s ..." % url
-
-		response = urllib2.urlopen(url + "browse/category/allbooks")
+		
+		try:
+			response = urllib2.urlopen(url + "browse/category/allbooks")
+		except URLError:
+			print "Skipping %s, as the server could not be successfully reached." % url
+			return None
+		
 		page_contents = response.read()
 
 		matcher = re.compile("<div class=\"load_data\" title=\"([\[\]0-9\s,]*)\">")
