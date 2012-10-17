@@ -7,6 +7,9 @@ def stringdammit(input_string):
 	else:
 		return input_string.encode('utf-8')
 
+config = json.load(open("config.json"))
+db = _mysql.connect(config['host'], config['user'], config['password'], config['database'])
+
 pipe_name = 'pipe_books'
 
 if not os.path.exists(pipe_name):
@@ -14,7 +17,6 @@ if not os.path.exists(pipe_name):
 
 pipein = open(pipe_name, 'r')
 buff = ""
-db = _mysql.connect("localhost", "root", "", "ebooks")
 
 while True:
 	data = pipein.read()
