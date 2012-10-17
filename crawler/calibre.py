@@ -152,10 +152,8 @@ class CalibreCrawler(threading.Thread):
 try:
 	google = GoogleCrawler()
 	google.base_url = "http://www.google.com/search?gcx=c&sourceid=chrome&ie=UTF-8&q=intitle%3A%22calibre+library%22+inurl%3A%22browse%22"
-	#google.start()
+	google.start()
 	
-	calibre_urls = deque(["http://caltsardragon.com:8080/"])
-
 	calibre = CalibreCrawler()
 	calibre.start()
 except KeyboardInterrupt:
