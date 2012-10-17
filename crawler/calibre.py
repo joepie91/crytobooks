@@ -79,7 +79,7 @@ class GoogleCrawler (threading.Thread):
 			
 			print "[google] == SLEEPING..."
 			time.sleep(4)
-			#self.crawl_page("http://www.google.com" + next_url)
+			self.crawl_page("http://www.google.com" + next_url)
 
 class CalibreCrawler(threading.Thread):
 	def run(self):
