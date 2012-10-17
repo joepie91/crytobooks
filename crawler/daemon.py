@@ -67,3 +67,5 @@ while True:
 				print "Skipped '%s' by '%s' (already exists)" % (s_title, s_authors)
 		else:
 			print "Unrecognized command: %s" % message_type
+
+	time.sleep(0.05)
