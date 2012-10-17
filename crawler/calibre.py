@@ -1,7 +1,12 @@
 #!/usr/bin/python
-import os, time, sys, json, urllib, urllib2, threading, re
+import os, time, sys, urllib, urllib2, threading, re
 from collections import deque
 from BeautifulSoup import BeautifulSoup
+
+try:
+	import json
+except:
+	import simplejson as json
 
 STOP = False
 

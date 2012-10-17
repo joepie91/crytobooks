@@ -1,5 +1,10 @@
 #!/usr/bin/python
-import os, time, sys, json, _mysql
+import os, time, sys, _mysql
+
+try:
+	import json
+except:
+	import simplejson as json
 
 def stringdammit(input_string):
 	if isinstance(input_string, str):
